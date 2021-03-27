@@ -1,8 +1,23 @@
-﻿
+﻿@using StockMVC.Models.Entity;
+@model List<TblCategories>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h2>Categories are listed on this page.</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+    </tr>
+    <tbody>
+        @foreach (var ctgr in Model) 
+        {
+        <tr>
+            <td>@ctgr.CategoryID</td>
+            <td>@ctgr.CategoryName</td>
+        </tr>
+        }
+    </tbody>
+</table>
 
