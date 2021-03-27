@@ -1,0 +1,29 @@
+﻿@using StockMVC.Models.Entity;
+@model List<TblProducts>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Brand</th>
+        <th>Product Cost</th>
+        <th>Product Stock</th>
+    </tr>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th>@product.productID</th>
+                <td>@product.productName</td>
+                <td>@product.productBrand</td>
+                <td>@product.productCost</td>
+                <td>@product.productStock</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
