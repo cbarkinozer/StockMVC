@@ -17,5 +17,17 @@ namespace StockMVC.Controllers
             var customers = db.TblCustomers.ToList();
             return View(customers);
         }
+        [HttpGet]
+        public ActionResult NewCustomer() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewCustomer(TblCustomers tblCustomers) 
+        {
+            db.TblCustomers.Add(tblCustomers);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
