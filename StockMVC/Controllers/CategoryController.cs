@@ -16,5 +16,17 @@ namespace StockMVC.Controllers
             var categories = db.TblCategories.ToList();
             return View(categories);
         }
+        [HttpGet]
+        public ActionResult NewCategory() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewCategory(TblCategories tblCategories) 
+        {
+            db.TblCategories.Add(tblCategories);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

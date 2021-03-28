@@ -12,6 +12,8 @@
         <th>Product Brand</th>
         <th>Product Cost</th>
         <th>Product Stock</th>
+        <th>Product Delete</th>
+        <th>Product Update</th>
     </tr>
     <tbody>
         @foreach (var product in Model)
@@ -22,8 +24,11 @@
                 <td>@product.productBrand</td>
                 <td>@product.productCost</td>
                 <td>@product.productStock</td>
+                <td><a href="/Product/Delete/@product.productID" class="btn btn-danger"></a></td>
+                <td><a href="/Product/Update/@product.productID" class="btn btn-sucess"></a></td>
             </tr>
         }
     </tbody>
 </table>
+<a href="/Product/NewProduct/" class="btn btn-primary">Add New Product</a>
 
