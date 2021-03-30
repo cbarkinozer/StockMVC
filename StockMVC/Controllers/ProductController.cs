@@ -38,5 +38,12 @@ namespace StockMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Delete(int id) 
+        {
+            var product = db.TblProducts.Find(id);
+            db.TblProducts.Remove(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
