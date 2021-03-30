@@ -10,15 +10,19 @@
         <th>Customer ID</th>
         <th>Customer Name</th>
         <th>Customer Surname</th>
+        <th>Customer Delete</th>
+        <th>Customer Update</th>
     </tr>
     <tbody>
         @foreach (var customer in Model)
         {
-            <tr>
-                <th>@customer.CustomerId</th>
-                <td>@customer.CustomerName</td>
-                <td>@customer.CustomerSurname</td>
-            </tr>
+        <tr>
+            <th>@customer.CustomerId</th>
+            <td>@customer.CustomerName</td>
+            <td>@customer.CustomerSurname</td>
+            <td><a href="/Customer/Delete/@customer.CustomerId" class="btn btn-danger"></a></td>
+            <td><a href="/Customer/Update/@customer.CustomerId" class="btn btn-sucess"></a></td>
+        </tr>
         }
     </tbody>
 </table>
