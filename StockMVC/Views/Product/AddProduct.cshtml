@@ -1,4 +1,4 @@
-﻿@model StockMVC.Models.Entity.TblCategories
+﻿@model StockMVC.Models.Entity.TblProducts
 @{
     ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label>Select Category</label>
-        @Html.DropDownListFor(m=>m.CategoryName,(List<SelectListItem>)ViewBag.itemList,new {@class="form-control" })
+        @Html.DropDownListFor(m=>m.TblCategories.CategoryID,(List<SelectListItem>)ViewBag.itemList,new {@class="form-control" })
     </div>
     <div>
         <label>Product Cost</label>

@@ -28,11 +28,15 @@ namespace StockMVC.Controllers
             ViewBag.itemList = selectListItems;
             return View();
         }
+        [HttpPost]
         public ActionResult AddProduct(TblProducts tblProducts)
         {
+            var ctg = db.TblCategories.Where(m => m.CategoryID == tblProducts.TblCategories.CategoryID).FirstOrDefault();
+            tblProducts.TblCategories = ctg;
+
             db.TblProducts.Add(tblProducts);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
