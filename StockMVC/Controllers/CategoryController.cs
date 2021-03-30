@@ -35,5 +35,11 @@ namespace StockMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult GetCategory(int id) 
+        {
+            var ctgr = db.TblCategories.Find(id);
+            return View("GetCategory",ctgr);
+            
+        }
     }
 }
